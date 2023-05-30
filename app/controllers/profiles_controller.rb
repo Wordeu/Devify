@@ -10,14 +10,20 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    @profile = Profile.new
+    if current_user
+      @profile = Profile.new
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def create
     @profile = Profile.new(profile_params)
+    @profile.user = current_user
     if @profile.save
       redirect_to profile_path(@profile)
     else
+      raise
       render :new, status: :unprocessable_entity
     end
   end
