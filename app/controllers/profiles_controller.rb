@@ -23,7 +23,6 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to profile_path(@profile)
     else
-      raise
       render :new, status: :unprocessable_entity
     end
   end
