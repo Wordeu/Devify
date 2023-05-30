@@ -1,5 +1,14 @@
-<h1>This is the profile index page</h1>
+<h1>Book a Dev for your project.</h1>
 
 <% @profiles.each do |profile| %>
-<%=  profile.name %>
+<div class="column">
+  <div class="card">
+
+    <h4> <%= profile.name %></h4>
+    <p>This Dev is a specialist in <%= profile.category %> programming. </p>
+    <p>Read about this Dev: <%= profile.bio %></p>
+    <p><%profile.name%>This programmers Devify rating is: <%= profile.rating %>/10</p>
+    <p>Day Rate Charge: £<%=profile.day_rate %></p>
+  </div>
+</div>
 <% end %>
