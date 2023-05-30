@@ -1,0 +1,10 @@
+<h1>Become a Coder creating a new profile</h1>
+<br>
+<%= simple_form_for(@profile) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :bio %>
+  <%= f.input :day_rate %>
+  <%= f.hidden_field :rating, value: 5 %>
+  <%= f.input :category %>
+  <%= f.submit %>
+<% end %>
