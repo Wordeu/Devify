@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :users
+  resources :users do
+    #if we do "top rated etc" in here somewhere with collection get or something like that???
+    # resources :bookings
+    resources :bookings, only: %i[show index]
+  end
+  resources :profiles, only: %i[index show new create]
 end
