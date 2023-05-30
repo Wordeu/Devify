@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+# set a before action
 
   def index
     @profiles = Profile.all
@@ -22,6 +23,7 @@ class ProfilesController < ApplicationController
   end
 
   private
+  #set params for profile
 
   def profile_params
     params.require(:profile).permit(:name, :bio, :day_rate, :rating, :category)
