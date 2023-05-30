@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
 
   def index
-    @profile = Profile.all
+    @profiles = Profile.all
   end
 
   def show
