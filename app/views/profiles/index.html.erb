@@ -4,7 +4,7 @@
 <div class="column">
   <div class="card">
 
-    <h4> <%= profile.name %></h4>
+    <h4> <%= link_to profile.name, profile_path(profile) %></h4>
     <p>This Dev is a specialist in <%= profile.category %> programming. </p>
     <p>Read about this Dev: <%= profile.bio %></p>
     <p><%profile.name%>This programmers Devify rating is: <%= profile.rating %>/10</p>
@@ -12,3 +12,4 @@
   </div>
 </div>
 <% end %>
+<%= link_to "Become a Member!", new_profile_path(@profile) %>
