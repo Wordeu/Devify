@@ -3,10 +3,11 @@
 
 
 puts "Destorying all users"
-User.destroy_all
-puts "Destorying all profiles"
+puts "Destroying all profiles"
 Profile.destroy_all
+User.destroy_all
 
+puts "creating seeds"
 category = %w[frontend backend fullstack]
 #template = User.create(email: "template @lewagon.com", password: "123456")
 hasna = User.create(email: "hasna@lewagon.com", password: "123456")
@@ -85,19 +86,19 @@ puts "Eduardo seeded!" if Profile.create!(
   bio: "I'm a 39 years old, born and bred in Barcelona Spain, who has dedicated the last 19 years to aircraft maintenance engineering. Since I was a kid, I've been around computers as we had a PC at home all the time to play around with. From MsDos, to all windows and now getting into Mac environment. Web development, and coding in general is being in the back of my mind for far too log. Till now! After this course, life will tell us, as they say. I'd like to get job to consolidate my new knowledge and learn event more! Looking forward too meet you all!",
   day_rate: rand(350..500),
   rating: rand(7..10),
-  category: category.sample
+  category: category.sample,
   user_id: eduardo.id
 )
 
-isameel = User.create(email: "ismaeel@lewagon.com", password: "123456")
+ismaeel = User.create(email: "ismaeel@lewagon.com", password: "123456")
 puts "Ismaeel seeded!" if Profile.create!(
   name: "Ismaeel Haque",
-  bio: "",
+  bio: "Very cool guy",
   day_rate: rand(350..500),
   rating: rand(7..10),
   category: category.sample,
   user_id: ismaeel.id
-  )
+)
 
 ken = User.create(email: "ken@lewagon.com", password: "123456")
 puts "Ken seeded!" if Profile.create!(
@@ -105,7 +106,7 @@ puts "Ken seeded!" if Profile.create!(
   bio: "I have worked at Japanese food supplier in london as sales and Logistics company. I always had many ideas to improve procedure to change my systems But I don't know how. And also I was curious about making app or website. I would like to change my career or enhance it with IT skills.",
   day_rate: rand(350..500),
   rating: rand(7..10),
-  category: category.sample.
+  category: category.sample,
   user_id: ken.id
 )
 
@@ -139,7 +140,7 @@ puts "Max seeded!" if Profile.create!(
   user_id: max.id
 )
 
-rachael = User.create(email: "rachael @lewagon.com", password: "123456")
+rachael = User.create(email: "rachael@lewagon.com", password: "123456")
 puts "Rachael seeded!" if Profile.create!(
   name: "Rachael Miller",
   bio: "👋🏼 I've spent the last 2 years working for a digital startup incubator company which builds disruptive new businesses for the worlds largest firms. In this time, I've been able to shadow the work of software engineers, and have been inspired to learn to code myself! Prior to working for this company, I studied Philosophy at the University of Leeds. This involved studying formal logic, which I found challenging but fascinating",
@@ -153,7 +154,7 @@ nicole = User.create(email: "nicole@lewagon.com", password: "123456")
 puts "Nicole seeded!" if Profile.create!(
   name: "Nicole Moncrieffe",
   bio: "Hi there! My name is Nicole. I am a Psychology graduate, and i've worked in Market Research for nearly two years. After learning to code in my old role as well as completing an introduction to coding course I knew this was my next career pursuit! Looking forward to learning more at Le wagon!",
-  day_rate: rand(,350..500),
+  day_rate: rand(350..500),
   rating: rand(7..10),
   category: category.sample,
   user_id: nicole.id
@@ -179,7 +180,7 @@ puts "Edward seeded!" if Profile.create!(
   user_id: edward.id
 )
 
-aron = User.create(email: "aron @lewagon.com", password: "123456")
+aron = User.create(email: "aron@lewagon.com", password: "123456")
 puts "Aron seeded!" if Profile.create!(
   name: "Aron Sayes",
   bio: "I was an economics student in UCL but realised that the course wasn't for me and chose to go back to my first passion in life, which would be coding.",
@@ -196,7 +197,7 @@ puts "Stefan seeded!" if Profile.create!(
   day_rate: rand(350..500),
   rating: rand(7..10),
   category: category.sample,
-  user_id: stephan.id
+  user_id: stefan.id
 )
 
 pouyan = User.create(email: "pouyan@lewagon.com", password: "123456")
@@ -258,3 +259,5 @@ puts "Johnny seeded!" if Profile.create!(
   category: category.sample,
   user_id: johnny.id
 )
+
+puts "seeds created"
