@@ -4,8 +4,10 @@
 category = %w[frontend backend fullstack]
 
 
-hasna = User.create(email: "Hasna@lewagon.com", password: "123456")
-puts "Hasna seeded!" if Profile.create!(
+hasna = User.create!(email: "Hasna@lewagon.com", password: "123456")
+puts "Hasna seeded!"
+
+Profile.create!(
   name: "Hasna Begum",
   bio: "I've worked in a start up company for over 6 years. As a member of the operations team, we've grown the business from a small to mid level company. Throughout this experience, I've grown to understand and appreciate the value of tech team. I'm eager to embark on a new journey to become a skilled web developer and use my prior experience to help another start up business.",
   day_rate: rand(350..500),
