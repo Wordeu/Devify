@@ -1,6 +1,6 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-require 'open-uri '
+
 
 puts "Destorying all users"
 puts "Destroying all profiles"
@@ -13,7 +13,7 @@ category = %w[frontend backend fullstack]
 
 hasna = User.create(email: "hasna@lewagon.com", password: "123456")
 puts "Hasna seeded!"
-file = URI.open("./db/images/Hasna.png")
+file = File.open("./db/images/Hasna.png")
 hasna_profile = Profile.create!(
   name: "Hasna Begum",
   bio: "I've worked in a start up company for over 6 years. As a member of the operations team, we've grown the business from a small to mid level company. Throughout this experience, I've grown to understand and appreciate the value of tech team. I'm eager to embark on a new journey to become a skilled web developer and use my prior experience to help another start up business.",
