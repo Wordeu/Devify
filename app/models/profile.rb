@@ -5,4 +5,6 @@ class Profile < ApplicationRecord
   validates :category, presence: true
   validates :day_rate, presence: true, numericality: { greater_than: 0 }
   validates :rating, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 10 }
+
+  has_one_attached :photo
 end
