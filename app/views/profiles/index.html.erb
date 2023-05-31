@@ -1,22 +1,21 @@
-<div class="d-flex align-items-center justify-content-center vh-35">
-  <div class="container">
-    <div class="row">
-      <% @profiles.each do |profile| %>
-      <div class="col-md-3 mb-4">
-        <div class="card rounded-7" style="width: 18rem; padding: 10px;">
-          <img class="card-img-top" src="..." alt="profile pic">
-          <div class="card-body">
-            <h5 class="card-title"><%=profile.name%></h5>
-            <p class="card-text">Specialty: <%= profile.category %> programming. </p>
-            <p class="card-text">Devify rating: <%= profile.rating %>/10</p>
-            <p class="card-text">Day Rate: £<%= profile.day_rate %></p>
-            <%= link_to "Read More", profile_path(profile), class: "btn btn-primary"%>
-            <br>
-            <%= link_to "Become a Member!", new_profile_path(profile) %>
-          </div>
-        </div>
-      </div>
-      <% end %>
-    </div>
+<h1>Book a Dev for your project.</h1>
+<br>
+<%= link_to "Become a Member!", new_profile_path(@profile) %>
+<br>
+
+<% @profiles.each do |profile| %>
+<div class="column">
+
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h4><%= link_to profile.name, profile_path(profile) %></h4>
+    <p>Specialist in <%= profile.category %> programming. </p>
+    <p>Read about this Dev: <%= profile.bio %></p>
+    <p><%profile.name%>Devify rating: <%= profile.rating %>/10</p>
+    <p>Day Rate Charge: £<%=profile.day_rate %></p>
   </div>
 </div>
+
+</div>
+<% end %>
