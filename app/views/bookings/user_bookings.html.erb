@@ -1,0 +1,15 @@
+<h1>My Bookings</h1>
+<br>
+<h2> <%= "You haven't booked anyone yet :c" if @userbookings.empty? %>
+</h2>
+<div class = "UserBookingList">
+  <% @userbookings.each do |booking| %>
+  <div class= "bookedcards">
+    <h3>Your booking with: <%= Profile.find(booking.profile_id).name %></h3>
+      <%= booking.start_date.strftime("Booking starts at: %m/%d/%Y") %>
+      <br>
+      <%=booking.end_date.strftime("Booking ends at: %m/%d/%Y")  %>
+  </div>
+  <br>
+  <%end%>
+</div>
