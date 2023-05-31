@@ -17,10 +17,16 @@
         <%="☆" %>
       <% end %>
       </h5>
-</div>
-<br>
-<div>Expert on:
+  <div>Expert on:
 <h5><%= @profile.category %> Developer 💻</div></h5>
 </div>
+</div>
+<br>
+
+<div><%= @profile.category %> </div>
+
+<%= render "bookings/new"%>
+
+
 <br>
 <%= link_to "Back", profiles_path(@profile) %>
