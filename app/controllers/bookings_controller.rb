@@ -8,6 +8,24 @@ class BookingsController < ApplicationController
   def show
   end
 
+  #def new
+  #  @profile = Profile.find(params[:id])
+  #  @booking = Booking.new
+  #end
+
+  def create
+    @profile = Profile.find(params[:id])
+    @booking = Booking.create(bookings_params)
+    @booking.avaialable = true    #<implement if profile actually available
+    @booking.user_id = current_user.id
+    @booking.profile_id = @profile.id
+    if @booking.save
+      redirect_to user_bookings_path
+    else
+      render template: 'bookings/new', status: :unprocesable_entity
+    end
+  end
+
   private
 
   def set_booking_params
@@ -15,6 +33,6 @@ class BookingsController < ApplicationController
   end
 
   def bookings_params
-    params.require(:booking).permit(:user_id, :profile_id, :start_date, :end_date,:available)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end

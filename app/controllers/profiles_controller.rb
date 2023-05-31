@@ -7,6 +7,7 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
