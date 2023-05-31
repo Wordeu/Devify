@@ -1,8 +1,9 @@
 <% stars = @profile.rating %>
 <% minus_starts = 10 - @profile.rating %>
 
-<div><h1><%= @profile.name %></h1></div>
 <br>
+<div class="container">
+<div><h1><%= @profile.name %></h1></div>
 <div class="pic-with-bio">
 <img class="avatar-large" src="https://static.vecteezy.com/system/resources/previews/002/275/847/non_2x/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg" alt="profile pic">
 <div class="m-2"><%= @profile.bio %></div>
@@ -20,5 +21,6 @@
 <br>
 <div>Expert on:
 <h5><%= @profile.category %> Developer 💻</div></h5>
+</div>
 <br>
 <%= link_to "Back", profiles_path(@profile) %>
