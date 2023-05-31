@@ -1,3 +1,6 @@
+<% stars = @profile.rating %>
+<% minus_starts = 10 - @profile.rating %>
+
 <div><h1><%= @profile.name %></h1></div>
 <br>
 <div class="pic-with-bio">
@@ -6,9 +9,13 @@
 </div>
 <br>
 <div>Rating:
-<h5><% @profile.rating.times do%>
+<h5><% stars.times do%>
         <%="⭐️" %>
-      <% end %> /10 </h5>
+      <% end %>
+      <% 10 - minus_starts.times do%>
+        <%="☆" %>
+      <% end %>
+      </h5>
 </div>
 <br>
 <div>Expert on:
