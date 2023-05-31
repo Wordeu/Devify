@@ -1,5 +1,4 @@
-<h1>This is the profile show page</h1>
-<div><%= @profile.name %></div>
+<div><h1><%= @profile.name %></h1></div>
 <br>
 <div><%= @profile.bio %></div>
 <br>
@@ -7,5 +6,7 @@
 <br>
 <div><%= @profile.category %> </div>
 
-
 <%= render "bookings/new"%>
+
+<br>
+<%= link_to "Back", profiles_path(@profile) %>

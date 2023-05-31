@@ -1,5 +1,21 @@
-<h1>This is the profile index page</h1>
+<h1>Book a Dev for your project.</h1>
+<br>
+<%= link_to "Become a Member!", new_profile_path(@profile) %>
+<br>
 
 <% @profiles.each do |profile| %>
-<%=  profile.name %>
+<div class="column">
+
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h4><%= link_to profile.name, profile_path(profile) %></h4>
+    <p>Specialist in <%= profile.category %> programming. </p>
+    <p>Read about this Dev: <%= profile.bio %></p>
+    <p><%profile.name%>Devify rating: <%= profile.rating %>/10</p>
+    <p>Day Rate Charge: £<%=profile.day_rate %></p>
+  </div>
+</div>
+
+</div>
 <% end %>
