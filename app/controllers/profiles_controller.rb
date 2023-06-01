@@ -2,7 +2,12 @@ class ProfilesController < ApplicationController
 # set a before action
 
   def index
-    @profiles = Profile.all
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR category ILIKE :query"
+      @profiles = Profile.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @profiles = Profile.all
+    end
   end
 
   def show
