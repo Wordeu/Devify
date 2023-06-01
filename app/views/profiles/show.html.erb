@@ -8,7 +8,9 @@
       <img class="avatar-large" src="https://static.vecteezy.com/system/resources/previews/002/275/847/non_2x/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg" alt="profile pic">
       <div class="m-2"><%= @profile.bio %></div>
     </div>
+    <div class="flex-container">
     <br>
+    <div class="flex-child">
     <div>Rating:
       <h5>
         <% stars.times do%>
@@ -19,15 +21,14 @@
         <% end %>
       </h5>
     </div>
-
     <div>Expert on:
       <h5><%= @profile.category.capitalize %> Developer 💻</h5>
     </div>
-
-  <br>
-  <%= render "bookings/new"%>
-  <br>
-  <br>
+  </div>
+    <div class="flex-child card rounded-7" >
+  <%=render "bookings/new"%>
+  </div>
+  </div>
   <%= link_to profiles_path(@profile), { class: "btn btn-primary" } do %>
       Back To All Devs
     <% end %>
