@@ -1,5 +1,6 @@
-<h1>Become a Coder! 💻</h1>
-<br>
+<h1>Become a Dev! 💻</h1>
+
+<div class="container m-1">
 <%= simple_form_for(@profile) do |f| %>
   <%= f.input :name %>
   <%= f.input :bio %>
@@ -9,5 +10,6 @@
   <%= f.input :photo, as: :file, label: "Upload a picture of yourself" %>
   <%= f.submit %>
 <% end %>
+</div>
 <br>
 <%= link_to "Back", profiles_path %>
