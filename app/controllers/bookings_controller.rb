@@ -25,10 +25,11 @@ class BookingsController < ApplicationController
       render 'profiles/show', status: :unprocessable_entity
     end
   end
+  def edit_user_booking
+  end
 
   def edit
     @booking = Booking.find(params[:id])
-
   end
 
   def update
