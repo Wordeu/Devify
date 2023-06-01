@@ -3,9 +3,10 @@
 
 <br>
 <div class="container">
+
   <div><h1><%= @profile.name %></h1></div>
       <div class="pic-with-bio">
-        <%= cl_image_tag @profile.photo.key, height: 250, width: 250, crop: :fill %>
+        <%= cl_image_tag @profile.photo.key, height: 250, width: 250, crop: :fill if @profile.photo.key != nil%>
         <div class="px-3"><%= @profile.bio %></div>
             </div>
 

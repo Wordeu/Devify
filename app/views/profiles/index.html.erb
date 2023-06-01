@@ -4,19 +4,34 @@
       <% @profiles.each do |profile| %>
       <div class="col-md-3 mb-4">
         <div class="card rounded-7" style="width: 18rem; padding: 10px;">
-          <%= cl_image_tag profile.photo.key, height: 150, width: 250, crop: :fill %>
-          <div class="card-img-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path profile.photo.key, height: 300, crop: :fill %>')"></div>
-          <div class="card-body">
-            <h5 class="card-title"><%=profile.name%></h5>
-            <p class="card-text">Specialty: <%= profile.category %> programming. </p>
-            <p class="card-text">Devify rating: <%= profile.rating %>/10</p>
-            <p class="card-text">Day Rate: £<%= profile.day_rate %></p>
-            <%= link_to "Read More", profile_path(profile), class: "btn btn-primary"%>
-            <br>
+
+          <% if profile.photo.key? %>
+            <%= cl_image_tag profile.photo.key, height: 150, width: 250, crop: :fill %>
+            <div class="card-img-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path profile.photo.key, height: 300, crop: :fill %>')"></div>
+            <div class="card-body">
+              <h5 class="card-title"><%=profile.name%></h5>
+              <p class="card-text">Specialty: <%= profile.category %> programming. </p>
+              <p class="card-text">Devify rating: <%= profile.rating %>/10</p>
+              <p class="card-text">Day Rate: £<%= profile.day_rate %></p>
+              <%= link_to "Read More", profile_path(profile), class: "btn btn-primary"%>
+              <br>
           </div>
+          <% else %>
+            <div class="card-img-top" style="background-image"></div>
+            <img src="../../../db/images/placeholder.png" height="150" width="250" alt="A profile picture" />
+            <div class="card-body">
+              <h5 class="card-title"><%=profile.name%></h5>
+              <p class="card-text">Specialty: <%= profile.category %> programming. </p>
+              <p class="card-text">Devify rating: <%= profile.rating %>/10</p>
+              <p class="card-text">Day Rate: £<%= profile.day_rate %></p>
+              <%= link_to "Read More", profile_path(profile), class: "btn btn-primary"%>
+          <% end %>
+
+
         </div>
       </div>
       <% end %>
     </div>
   </div>
+</div>
 </div>
