@@ -13,7 +13,7 @@ category = %w[frontend backend fullstack]
 
 hasna = User.create(email: "hasna@lewagon.com", password: "123456")
 puts "Hasna seeded!"
-file = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Hasna.png")
+file = File.open("./db/images/Hasna.png")
 hasna_profile = Profile.create!(
   name: "Hasna Begum",
   bio: "I've worked in a start up company for over 6 years. As a member of the operations team, we've grown the business from a small to mid level company. Throughout this experience, I've grown to understand and appreciate the value of tech team. I'm eager to embark on a new journey to become a skilled web developer and use my prior experience to help another start up business.",
@@ -25,7 +25,7 @@ hasna_profile = Profile.create!(
 hasna_profile.photo.attach(io: file, filename: "Hasna.png", content_type: "images/png")
 hasna_profile.save!
 
-file1 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Phoebe.png")
+file1 = File.open("./db/images/Phoebe.png")
 phoebe = User.create(email: "phoebe@lewagon.com", password: "123456")
 puts "Phoebe seeded!"
 phoebe_profile = Profile.create!(
@@ -39,7 +39,7 @@ phoebe_profile = Profile.create!(
 phoebe_profile.photo.attach(io: file1, filename: "Phoebe.png", content_type: "images/png")
 phoebe_profile.save!
 
-file2 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Rory.png")
+file2 = File.open("./db/images/Rory.png")
 rory = User.create(email: "rory@lewagon.com", password: "123456")
 puts "Rory seeded!"
 rory_profile = Profile.create!(
@@ -53,7 +53,7 @@ rory_profile = Profile.create!(
 rory_profile.photo.attach(io: file2, filename: "Rory.png", content_type: "images/png")
 rory_profile.save!
 
-file3 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Dorian.png")
+file3 = File.open("./db/images/Dorian.png")
 dorian = User.create(email: "dorian@lewagon.com", password: "123456")
 puts "Dorian seeded!"
 dorian_profile = Profile.create!(
@@ -67,7 +67,7 @@ dorian_profile = Profile.create!(
 dorian_profile.photo.attach(io: file3, filename: "Dorian.png", content_type: "images/png")
 dorian_profile.save!
 
-file4 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Gorka.png")
+file4 = File.open("./db/images/Gorka.png")
 gorka = User.create(email: "gorka@lewagon.com", password: "123456")
 puts "Gorka seeded!"
 gorka_profile = Profile.create!(
@@ -81,7 +81,7 @@ gorka_profile = Profile.create!(
 gorka_profile.photo.attach(io: file4, filename: "Gorka.png", content_type: "images/png")
 gorka_profile.save!
 
-file5 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Camillo.png")
+file5 = File.open("./db/images/Camillo.png")
 camillo = User.create(email: "camillo@lewagon.com", password: "123456")
 puts "Camillo seeded!"
 camillo_profile = Profile.create!(
@@ -95,7 +95,7 @@ camillo_profile = Profile.create!(
 camillo_profile.photo.attach(io: file5, filename: "Camillo.png", content_type: "images/png")
 camillo_profile.save!
 
-file6 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Jamie.png")
+file6 = File.open("./db/images/Jamie.png")
 jamie = User.create(email: "jamie@lewagon.com", password: "123456")
 puts "Jamie seeded!"
 jamie_profile = Profile.create!(
@@ -109,7 +109,7 @@ jamie_profile = Profile.create!(
 jamie_profile.photo.attach(io: file6, filename: "Jamie.png", content_type: "images/png")
 jamie_profile.save!
 
-file7 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Eduardo.png")
+file7 = File.open("./db/images/Eduardo.png")
 eduardo = User.create(email: "eduardo@lewagon.com", password: "123456")
 puts "Eduardo seeded!"
 eduardo_profile = Profile.create!(
@@ -123,7 +123,7 @@ eduardo_profile = Profile.create!(
 eduardo_profile.photo.attach(io: file7, filename: "Eduardo.png", content_type: "images/png")
 eduardo_profile.save!
 
-file8 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Ismaeel.png")
+file8 = File.open("./db/images/Ismaeel.png")
 ismaeel = User.create(email: "ismaeel@lewagon.com", password: "123456")
 puts "Ismaeel seeded!"
 ismaeel_profile = Profile.create!(
@@ -137,7 +137,7 @@ ismaeel_profile = Profile.create!(
 ismaeel_profile.photo.attach(io: file8, filename: "Ismaeel.png", content_type: "images/png")
 ismaeel_profile.save!
 
-file9 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Ken.png")
+file9 = File.open("./db/images/Ken.png")
 ken = User.create(email: "ken@lewagon.com", password: "123456")
 puts "Ken seeded!"
 ken_profile = Profile.create!(
@@ -151,7 +151,7 @@ ken_profile = Profile.create!(
 ken_profile.photo.attach(io: file9, filename: "Ken.png", content_type: "images/png")
 ken_profile.save!
 
-file10 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Alice.png")
+file10 = File.open("./db/images/Alice.png")
 alice = User.create(email: "alice@lewagon.com", password: "123456")
 puts "Alice seeded!"
 alice_profile = Profile.create!(
@@ -165,7 +165,7 @@ alice_profile = Profile.create!(
 alice_profile.photo.attach(io: file10, filename: "Alice.png", content_type: "images/png")
 alice_profile.save!
 
-file11 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Warsame.png")
+file11 = File.open("./db/images/Warsame.png")
 warsame = User.create(email: "warsame@lewagon.com", password: "123456")
 puts "Warsame seeded!"
 warsame_profile = Profile.create!(
@@ -179,7 +179,7 @@ warsame_profile = Profile.create!(
 warsame_profile.photo.attach(io: file11, filename: "Warsame.png", content_type: "images/png")
 warsame_profile.save!
 
-file12 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Max.png")
+file12 = File.open("./db/images/Max.png")
 max = User.create(email: "max@lewagon.com", password: "123456")
 puts "Max seeded!"
 max_profile = Profile.create!(
@@ -193,7 +193,7 @@ max_profile = Profile.create!(
 max_profile.photo.attach(io: file12, filename: "Max.png", content_type: "images/png")
 max_profile.save!
 
-file13 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Rachael.png")
+file13 = File.open("./db/images/Rachael.png")
 rachael = User.create(email: "rachael@lewagon.com", password: "123456")
 puts "Rachael seeded!"
 rachael_profile = Profile.create!(
@@ -207,7 +207,7 @@ rachael_profile = Profile.create!(
 rachael_profile.photo.attach(io: file13, filename: "Rachael.png", content_type: "images/png")
 rachael_profile.save!
 
-file14 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Nicole.png")
+file14 = File.open("./db/images/Nicole.png")
 nicole = User.create(email: "nicole@lewagon.com", password: "123456")
 puts "Nicole seeded!"
 nicole_profile = Profile.create!(
@@ -221,7 +221,7 @@ nicole_profile = Profile.create!(
 nicole_profile.photo.attach(io: file14, filename: "Nicole.png", content_type: "images/png")
 nicole_profile.save!
 
-file15 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Mark.png")
+file15 = File.open("./db/images/Mark.png")
 mark = User.create(email: "mark@lewagon.com", password: "123456")
 puts "Mark seeded!"
 mark_profile = Profile.create!(
@@ -235,7 +235,7 @@ mark_profile = Profile.create!(
 mark_profile.photo.attach(io: file15, filename: "Mark.png", content_type: "images/png")
 mark_profile.save!
 
-file16 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Edward.png")
+file16 = File.open("./db/images/Edward.png")
 edward = User.create(email: "edward@lewagon.com", password: "123456")
 puts "Edward seeded!"
 edward_profile = Profile.create!(
@@ -249,7 +249,7 @@ edward_profile = Profile.create!(
 edward_profile.photo.attach(io: file16, filename: "Edward.png", content_type: "images/png")
 edward_profile.save!
 
-file17 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Aaron.png")
+file17 = File.open("./db/images/Aaron.png")
 aron = User.create(email: "aron@lewagon.com", password: "123456")
 puts "Aron seeded!"
 aron_profile = Profile.create!(
@@ -263,7 +263,7 @@ aron_profile = Profile.create!(
 aron_profile.photo.attach(io: file17, filename: "Aaron.png", content_type: "images/png")
 aron_profile.save!
 
-file18 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Stefan.png")
+file18 = File.open("./db/images/Stefan.png")
 stefan = User.create(email: "stefan@lewagon.com", password: "123456")
 puts "Stefan seeded!"
 stefan_profile = Profile.create!(
@@ -277,7 +277,7 @@ stefan_profile = Profile.create!(
 stefan_profile.photo.attach(io: file18, filename: "Stefan.png", content_type: "images/png")
 stefan_profile.save!
 
-file19 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Pouyan.png")
+file19 = File.open("./db/images/Pouyan.png")
 pouyan = User.create(email: "pouyan@lewagon.com", password: "123456")
 puts "Pouyan seeded!"
 pouyan_profile = Profile.create!(
@@ -291,7 +291,7 @@ pouyan_profile = Profile.create!(
 pouyan_profile.photo.attach(io: file19, filename: "Pouyan.png", content_type: "images/png")
 pouyan_profile.save!
 
-file20 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Stephen.png")
+file20 = File.open("./db/images/Stephen.png")
 stephen = User.create(email: "stephen@lewagon.com", password: "123456")
 puts "Stephen seeded!"
 stephen_profile = Profile.create!(
@@ -305,7 +305,7 @@ stephen_profile = Profile.create!(
 stephen_profile.photo.attach(io: file20, filename: "Stephen.png", content_type: "images/png")
 stephen_profile.save!
 
-file21 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Sunisha.png")
+file21 = File.open("./db/images/Sunisha.png")
 sunny = User.create(email: "sunny@lewagon.com", password: "123456")
 puts "Sunny seeded!"
 sunny_profile = Profile.create!(
@@ -319,7 +319,7 @@ sunny_profile = Profile.create!(
 sunny_profile.photo.attach(io: file21, filename: "Sunisha.png", content_type: "images/png")
 sunny_profile.save!
 
-file22 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Richard.png")
+file22 = File.open("./db/images/Richard.png")
 richard = User.create(email: "richard@lewagon.com", password: "123456")
 puts "Richard seeded!"
 richard_profile = Profile.create!(
@@ -333,7 +333,7 @@ richard_profile = Profile.create!(
 richard_profile.photo.attach(io: file22, filename: "Richard.png", content_type: "images/png")
 richard_profile.save!
 
-file23 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Robert.png")
+file23 = File.open("./db/images/Robert.png")
 robert = User.create(email: "robert@lewagon.com", password: "123456")
 puts "Robert seeded!"
 robert_profile = Profile.create!(
@@ -347,7 +347,7 @@ robert_profile = Profile.create!(
 robert_profile.photo.attach(io: file23, filename: "Robert.png", content_type: "images/png")
 robert_profile.save!
 
-file24 = File.open("/Users/patatafrita/code/Wordeu/Devify/db/images/Johnny.png")
+file24 = File.open("./db/images/Johnny.png")
 johnny = User.create(email: "johnny@lewagon.com", password: "123456")
 puts "Johnny seeded!"
 johnny_profile = Profile.create!(
