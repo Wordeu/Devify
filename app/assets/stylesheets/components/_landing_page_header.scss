@@ -1,0 +1,37 @@
+
+  #span-header {
+    color: #80C5BD;
+    line-height: 40px;
+  }
+
+  #span-header:hover {
+    color: #252626;
+    text-decoration: none;
+  }
+
+  .container {
+    margin-top: 150px;
+  }
+
+  .h1-large {
+    font-size: 60px;
+    padding-bottom: 30px;
+
+  }
+
+  #span-header::first-letter {
+    margin-right: 50em;
+}
+
+#text-container {
+  border-radius: 50px;
+}
+
+.h1-large {
+  display: inline-block;
+
+}
+
+.p-large {
+  padding-bottom: 18px;
+}
