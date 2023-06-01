@@ -30,11 +30,9 @@
             <h4>Total for this booking: £<%= booking.profile.day_rate * @days_booked %></h4>
             <p>£<%=booking.profile.day_rate%> day rate x <%=@days_booked%> <%=@days%></p>
 
-            <%= link_to delete_user_booking_path(booking.id),
-              { class: "btn btn-sm btn-danger",
-                data: { turbo_method: :delete,
-                          turbo_confirm: "Are you sure you want to remove this booking?"
-                      }
+            <%= link_to edit_user_booking_path(booking.id),
+              { class: "btn btn-sm btn-primary",
+                data: { turbo_method: :get}
               } do%>
                 Update Booking Details
               <%end%>
@@ -54,6 +52,4 @@
       </div>
     <%end%>
   </div>
-<%raise%>
-
 </div>
