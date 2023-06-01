@@ -14,7 +14,7 @@ export default class extends Controller {
       const booking_end_date = Date.parse(dates[2].value)
       const days = ((booking_end_date - booking_start_date) / 86400000) + 1
 
-      console.log(days)
+      // console.log(days)
 
       const day_rate = this.rateTarget.innerText
       const total_cost = days * day_rate
