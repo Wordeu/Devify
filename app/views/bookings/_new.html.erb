@@ -2,8 +2,8 @@
   <h2> Book <%= @profile.name %> </h2>
   <p> <%= @profile.name%>'s day rate is £ <span data-total-cost-booking-page-target="rate"><%= @profile.day_rate%></span> </p>
    <%= simple_form_for [@profile, @booking] do |f| %>
-    <%= f.input :start_date, as: :date, html5: true %>
-    <%= f.input :end_date, as: :date, html5: true %>
+    <%= f.input :start_date, as: :date, html5: true, class: "clickable-input" %>
+    <%= f.input :end_date, as: :date, html5: true, class: "clickable-input" %>
     <div class= "bookingcosts">
 
       <div class="total">
