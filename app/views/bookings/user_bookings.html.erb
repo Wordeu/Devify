@@ -1,15 +1,59 @@
-<h1>My Bookings</h1>
-<br>
-<h2> <%= "You haven't booked anyone yet :c" if @userbookings.empty? %>
-</h2>
-<div class = "UserBookingList">
-  <% @userbookings.each do |booking| %>
-  <div class= "bookedcards">
-    <h3>Your booking with: <%= Profile.find(booking.profile_id).name %></h3>
-      <%= booking.start_date.strftime("Booking starts at: %m/%d/%Y") %>
-      <br>
-      <%=booking.end_date.strftime("Booking ends at: %m/%d/%Y")  %>
-  </div>
+<div class = "container">
+  <h1>My Bookings</h1>
   <br>
-  <%end%>
+  <h2> <%= "You haven't booked anyone yet :c" if @user_bookings.empty? %></h2>
+
+  <div class = "container">
+    <% @user_bookings.each do |booking| %>
+      <% if (booking.end_date.strftime("%d").to_i - booking.start_date.strftime("%d").to_i) == 0
+          @days_booked = 1
+        else
+          @days_booked = (booking.end_date.strftime("%d").to_i - booking.start_date.strftime("%d").to_i)
+        end
+      %>
+      <% if (@days_booked = 1)
+          @days = "day"
+        else
+          @days ="days"
+        end
+      %>
+
+      <div class = "card">
+        <div class = "showing_booking_details">
+          <div class= "showing_dates">
+            <h3>Your booking with: <%= Profile.find(booking.profile_id).name %></h3>
+            <%= booking.start_date.strftime("Booking starts at: %m/%d/%Y")%>
+            <br>
+            <%=booking.end_date.strftime("Booking ends at: %m/%d/%Y")%>
+          </div>
+          <div class = "showing_total">
+            <h4>Total for this booking: £<%= booking.profile.day_rate * @days_booked %></h4>
+            <p>£<%=booking.profile.day_rate%> day rate x <%=@days_booked%> <%=@days%></p>
+
+            <%= link_to delete_user_booking_path(booking.id),
+              { class: "btn btn-sm btn-danger",
+                data: { turbo_method: :delete,
+                          turbo_confirm: "Are you sure you want to remove this booking?"
+                      }
+              } do%>
+                Update Booking Details
+              <%end%>
+
+            <%= link_to delete_user_booking_path(booking.id),
+              { class: "btn btn-sm btn-danger",
+                data: { turbo_method: :delete,
+                          turbo_confirm: "Are you sure you want to remove this booking?"
+                      }
+              } do%>
+                Delete This Booking
+              <%end%>
+
+          </div>
+        </div>
+        <br>
+      </div>
+    <%end%>
+  </div>
+<%raise%>
+
 </div>
