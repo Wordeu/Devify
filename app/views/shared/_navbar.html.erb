@@ -1,7 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon mb-3 sticky-top">
   <div class="container-fluid">
-    <%= link_to "/profiles", class: "navbar-brand" do %>
-      <%= image_tag 'devify_logo.png' %>
+    <% if user_signed_in? %>
+      <%= link_to "/profiles", class: "navbar-brand" do %>
+        <%= image_tag 'devify_logo.png' %>
+      <% end %>
+    <% else %>
+      <%= link_to "/", class: "navbar-brand" do %>
+        <%= image_tag 'devify_logo.png' %>
+      <% end %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
