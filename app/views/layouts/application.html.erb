@@ -17,11 +17,14 @@
 	<link href="css/styles.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <%= render 'shared/navbar'%>
+    <div class="container">
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    </div>
+
     <%= render 'shared/footer'%>
 
   </body>
