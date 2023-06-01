@@ -1,2 +1,5 @@
 <h1>This is bookings index page</h1>
-<%= raise %>
+<% @bookings.each do |booking| %>
+<%=  booking.start_date %>
+<% end %>
+  <%= link_to "delete", profile_booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Delete me lol"} %>
