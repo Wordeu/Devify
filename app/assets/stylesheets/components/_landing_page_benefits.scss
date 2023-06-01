@@ -1,7 +1,6 @@
-
 .basic-6 {
-	padding-top: 0.2rem;
-	padding-bottom: 3rem;
+	padding-top: 0.90rem;
+	padding-bottom: 1rem;
 }
 
 .basic-6 .h2-heading {
@@ -10,32 +9,31 @@
 }
 
 .basic-6 .p-heading {
-	margin-bottom: 3.875rem;
+	margin-bottom: .875rem;
 	text-align: center;
 }
 
-.basic-6 .service-container {
-	margin-bottom: 3.5rem;
-	padding: 2.875rem 5rem 1.75rem 4.5rem;
-	border: 1px solid #80C5BD;
+.service-container {
+	margin-bottom: 1.8rem;
+	padding: 2.875rem 2rem 0.05rem 2.5rem;
 	border-radius: 40px;
 	box-shadow: 0 0 14px rgba(42, 53, 79, 0.06);
+	background-color: #daedeb;
 }
 
 .basic-6 .service-icon {
 	width: 4rem;
 	height: 4rem;
-	margin-bottom: 1.75rem;
+	margin-bottom: 0.75rem;
 	border-radius: 4px;
-	background-color: #9380c5;
+	background-color: #80C5BD;
 	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.basic-6 .service-icon .fas {
-	color: #ffffff;
+.service-icon .fas {
+	color: #80C5BD;
 	font-size: 2rem;
-	line-height: 4rem;
 }
-
-
-	/* end of services */

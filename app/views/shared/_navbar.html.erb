@@ -2,11 +2,13 @@
   <div class="container-fluid">
     <% if user_signed_in? %>
       <%= link_to "/profiles", class: "navbar-brand" do %>
-        <%= image_tag 'devify_logo.png' %>
+        <%= image_tag 'devify_logo.png'  %>
       <% end %>
     <% else %>
       <%= link_to "/", class: "navbar-brand" do %>
-        <%= image_tag 'devify_logo.png' %>
+        <%= image_tag 'devify_logo.png', style: 'width: 150px; height: auto;' %>
+
+
       <% end %>
     <% end %>
 
