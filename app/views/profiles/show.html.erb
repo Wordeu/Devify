@@ -7,8 +7,11 @@
       <div class="pic-with-bio">
         <%= cl_image_tag @profile.photo.key, height: 250, width: 250, crop: :fill %>
         <div class="px-3"><%= @profile.bio %></div>
-      </div>
+            </div>
+
+      <div class="flex-container">
     <br>
+    <div class="flex-child">
     <div>Rating:
       <h5>
         <% stars.times do%>
@@ -19,15 +22,16 @@
         <% end %>
       </h5>
     </div>
-
     <div>Expert on:
       <h5><%= @profile.category.capitalize %> Developer 💻</h5>
     </div>
+  </div>
+    <div class="flex-child card rounded-7" >
 
-  <br>
-  <%= render "bookings/new"%>
-  <br>
-  <br>
+  <%=render "bookings/new"%>
+      </div>
+  </div>
+  </div>
   <%= link_to profiles_path(@profile), { class: "btn btn-primary" } do %>
       Back To All Devs
     <% end %>

@@ -1,6 +1,6 @@
-<div class= "booking-form">
+<div data-controller="total-cost-booking-page" class= "booking-form">
   <h2> Book <%= @profile.name %> </h2>
-  <p> <%= @profile.name%>'s day rate is £<%= @profile.day_rate%> </p>
+  <p> <%= @profile.name%>'s day rate is £ <span data-total-cost-booking-page-target="rate"><%= @profile.day_rate%></span> </p>
    <%= simple_form_for [@profile, @booking] do |f| %>
     <%= f.input :start_date, as: :date, html5: true %>
     <%= f.input :end_date, as: :date, html5: true %>
@@ -10,7 +10,8 @@
      <%# <h3> Total cost: <%= @profile.day_rate * (end_date%>
      </div>
    </div>
-   <%= f.submit "Book #{(@profile.name).split(" ").first}?", class: "btn btn-primary" %>
+  <p data-total-cost-booking-page-target="price"> The total cost is: £0 </p>
+   <%= f.submit "Book #{(@profile.name).split(" ").first}", class: "btn btn-primary" %>
    <br>
   <%end%>
 </div>
