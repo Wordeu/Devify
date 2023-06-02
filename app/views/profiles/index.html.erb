@@ -7,8 +7,8 @@
         <div class="card rounded-4 d-flex align-items-center pt-4" style="width: 18rem; padding: 10px; height: 30rem;">
 
           <% if profile.photo.key? %>
-            <%= cl_image_tag profile.photo.key, height: 150, width: 250, crop: :fill %>
-            <div class="card-img-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path profile.photo.key, height: 300, crop: :fill %>')"></div>
+          <%= cl_image_tag profile.photo.key, height: 150, width: 175, style: 'border-radius: 15px; object-fit: cover;' %>
+            <div class="card-img-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path profile.photo.key, height: 300, crop: :fill %>'); border-radius: 22px;"></div>
             <div class="card-body">
               <h5 class="card-title"><%=profile.name%></h5>
               <p class="card-text">Specialty: <%= profile.category.capitalize %> Programming </p>
@@ -25,7 +25,7 @@
               <p class="card-text">Specialty: <%= profile.category.capitalize %> Programming </p>
               <p class="card-text">Devify rating: <%= profile.rating %>/10</p>
               <p class="card-text">Day Rate: £<%= profile.day_rate %></p>
-              <%= link_to "Read More", profile_path(profile), class: "btn btn-primary"%>
+              <%= link_to "Read More", profile_path(profile), class: "btn btn-primary btn-rounded" %>
           <% end %>
 
 
