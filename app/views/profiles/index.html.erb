@@ -1,9 +1,10 @@
-<div class="d-flex align-items-center justify-content-center vh-35">
+<div class="d-flex align-items-center justify-content-center vh-35 pt-4">
   <div class="container m-1">
     <div class="row">
       <% @profiles.each do |profile| %>
-      <div class="col-md-3 mb-4">
-        <div class="card rounded-7" style="width: 18rem; padding: 10px;">
+      <div class="col-md-3 mb-4 d-flex">
+
+        <div class="card rounded-4 d-flex align-items-center pt-4" style="width: 18rem; padding: 10px; height: 30rem;">
 
           <% if profile.photo.key? %>
             <%= cl_image_tag profile.photo.key, height: 150, width: 250, crop: :fill %>
