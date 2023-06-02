@@ -9,7 +9,6 @@
         <%= image_tag 'devify_logo.png' %>
       <% end %>
     <% end %>
-
     <%= form_with url: profiles_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
         params[:query],
@@ -24,11 +23,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-          <div id = "sign up button">
-            <%= link_to new_profile_path, { class: "btn btn-primary" } do %>
+
+          <div id = "signup_button">
+            <%= link_to new_profile_path, { class: "btn btn-sm btn-primary" } do %>
               Become A Dev
             <% end%>
           </div>
+
+          <div id = "check_bookingsbutton">
+            <%= link_to user_bookings_path, { class: "btn btn-sm btn-primary mx-1" } do %>
+              Booked Devs
+            <% end%>
+          </div>
+
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "nav-link" %>

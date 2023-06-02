@@ -1,19 +1,17 @@
 <div class = "container">
+  <h1> Adjust Booking with <%= @profile.name %> </h1>
 
   <div data-controller="total-cost-booking-page" class= "booking-form">
-  <h2> Adjust Booking with <%= @profile.name %> </h2>
-  <p> <%= @profile.name%>'s day rate is £ <span data-total-cost-booking-page-target="rate"><%= @profile.day_rate%></span> </p>
+    <p> <%= @profile.name%>'s day rate is £ <span data-total-cost-booking-page-target="rate"><%= @profile.day_rate%></span> </p>
    <%= simple_form_for [@profile, @booking] do |f| %>
     <%= f.input :start_date, as: :date, html5: true, class: "clickable-input" %>
     <%= f.input :end_date, as: :date, html5: true, class: "clickable-input" %>
-    <div class= "bookingcosts">
 
-      <div class="total">
-     <%# <h3> Total cost: <%= @profile.day_rate * (end_date%>
-     </div>
-   </div>
-  <p data-total-cost-booking-page-target="price"> The total cost is: £0 </p>
-   <%= f.submit "Book #{(@profile.name).split(" ").first}", class: "btn btn-primary" %>
+    <div class="total">
+      <p data-total-cost-booking-page-target="price"> The new total is: £0 </p>
+    </div>
+
+   <%= f.submit "Update!", class: "btn btn-primary" %>
    <br>
   <%end%>
 </div>

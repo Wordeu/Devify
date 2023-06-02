@@ -1,55 +1,54 @@
-<div class = "container">
+<div class = "container my-1 py-0">
   <h1>My Bookings</h1>
   <br>
   <h2> <%= "You haven't booked anyone yet :c" if @user_bookings.empty? %></h2>
-
-  <div class = "container">
+  <br>
+  <div class = "bookingcontainer px-5">
     <% @user_bookings.each do |booking| %>
-      <% if (booking.end_date.strftime("%d").to_i - booking.start_date.strftime("%d").to_i) == 0
-          @days_booked = 1
-        else
-          @days_booked = (booking.end_date.strftime("%d").to_i - booking.start_date.strftime("%d").to_i)
-        end
-      %>
-      <% if (@days_booked = 1)
+      <% @days_booked = (booking.end_date.strftime("%d").to_i - booking.start_date.strftime("%d").to_i)
+         @days_booked += 1
+
+        if @days_booked == 1
           @days = "day"
         else
-          @days ="days"
+          @days = "days"
         end
-      %>
-
-      <div class = "card">
-        <div class = "showing_booking_details">
-          <div class= "showing_dates">
+        %>
+      <div class = "card my-3 p-5">
+        <div class = "showing_booking_details d-flex justify-content-around align-items-center">
+          <div class= "showing_dates align-item w-50">
             <h3>Your booking with: <%= Profile.find(booking.profile_id).name %></h3>
             <%= booking.start_date.strftime("Booking starts at: %m/%d/%Y")%>
             <br>
             <%=booking.end_date.strftime("Booking ends at: %m/%d/%Y")%>
           </div>
-          <div class = "showing_total">
-            <h4>Total for this booking: £<%= booking.profile.day_rate * @days_booked %></h4>
-            <p>£<%=booking.profile.day_rate%> day rate x <%=@days_booked%> <%=@days%></p>
-
-            <%= link_to edit_user_booking_path(booking.id),
-              { class: "btn btn-sm btn-primary",
-                data: { turbo_method: :get}
-              } do%>
-                Update Booking Details
+          <div class = "showing_total d-flex align-items-center w-50">
+            <div class = "texttotal w-75">
+              <h3>Total: £<%= booking.profile.day_rate * @days_booked %></h3>
+              <p>£<%=booking.profile.day_rate%> day rate x <%=@days_booked%> <%=@days%></p>
+            </div>
+            <div class = "bookingbuttons w-25 my-5  d-flex flex-column align-items-stretch ">
+              <%= link_to edit_user_booking_path(booking.id),
+                { class: "btn btn-sm btn-primary my-1",
+                  data: { turbo_method: :get,
+                          turbo_confirm: "Are you sure you want to change this booking?"}
+                } do%>
+                  Update Details
               <%end%>
-
-            <%= link_to delete_user_booking_path(booking.id),
-              { class: "btn btn-sm btn-danger",
+              <%= link_to delete_user_booking_path(booking.id),
+                { class: "btn btn-sm btn-secondary my-1",
                 data: { turbo_method: :delete,
                           turbo_confirm: "Are you sure you want to remove this booking?"
                       }
-              } do%>
-                Delete This Booking
+                } do%>
+                Delete Booking
               <%end%>
-
+            </div>
           </div>
         </div>
-        <br>
       </div>
     <%end%>
   </div>
+  <br>
+  <br>
 </div>

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   delete "user_bookings/:id", to: "bookings#destroy", as: :delete_user_booking
 
   get "user_bookings/:id/edit", to: "bookings#edit", as: :edit_user_booking
-  patch "update_user_booking/:id", to: "bookings#update"
+  patch "update_user_booking/:id/edit", to: "bookings#update"
 
   resources :profiles, only: %i[index show new create] do
     resources :bookings, only: %i[index new create destroy]
