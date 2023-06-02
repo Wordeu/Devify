@@ -25,14 +25,20 @@ class BookingsController < ApplicationController
       render 'profiles/show', status: :unprocessable_entity
     end
   end
-  def edit_user_booking
-  end
 
   def edit
     @booking = Booking.find(params[:id])
+    @profile_id = @booking.profile_id
+    @profile = Profile.find(@profile_id)
+
+    # @profile = Profile.where(id: @booking.profile_id)
+    # @profile = @profile.first
   end
 
   def update
+    @booking = Booking.find(params[:id])
+    @booking.update(bookings_params)
+    redirect_to user_bookings_path, status: :see_other
   end
 
   def destroy
