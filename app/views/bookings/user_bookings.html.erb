@@ -16,11 +16,13 @@
         %>
       <div class = "card my-3 p-5">
         <div class = "showing_booking_details d-flex justify-content-around align-items-center">
-          <div class= "showing_dates align-item w-50">
+          <div class= "showing_dates w-50">
+            <div class ="text-start">
             <h3>Your booking with: <%= Profile.find(booking.profile_id).name %></h3>
             <%= booking.start_date.strftime("Booking starts at: %m/%d/%Y")%>
             <br>
             <%=booking.end_date.strftime("Booking ends at: %m/%d/%Y")%>
+          </div>
           </div>
           <div class = "showing_total d-flex align-items-center w-50">
             <div class = "texttotal w-75">

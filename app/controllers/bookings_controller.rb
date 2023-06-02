@@ -44,7 +44,12 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(bookings_params)
-    redirect_to user_bookings_path, status: :see_other
+
+    if @booking.save
+      redirect_to user_bookings_path, notice: "Booking updated"
+    else
+      render 'new', status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -56,6 +61,6 @@ class BookingsController < ApplicationController
   private
 
   def bookings_params
-    params.require(:booking).permit(:start_date, :end_date, :avaialable)
+    params.require(:booking).permit(:start_date, :end_date, :available)
   end
 end
