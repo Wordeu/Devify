@@ -13,10 +13,11 @@ class BookingsController < ApplicationController
     @user_bookings = current_user.bookings
     @profile = Profile.where(user_id: current_user.id)
     @profile_bookings = Booking.where(profile_id: @profile.first.id)
-    @profile = @profile.first
-    if @profile_bookings.last
-      @client = Profile.where(user_id: @profile_bookings.last.user_id).first
-    end
+
+    # @profile = @profile.first
+    # if @profile_bookings.last
+    #   @client = Profile.where(user_id: @profile_bookings.last.user_id).first
+    # end
   end
 
   def create

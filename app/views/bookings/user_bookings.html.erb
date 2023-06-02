@@ -51,40 +51,46 @@
       </div>
     <%end%>
   </div>
+
   <br>
   <br>
 
 
 
 
-
-
-<div class = "bookingcontainer">
-<h1>Future Projects</h1>
-<br>
+  <h1>Future Projects</h1>
+  <br>
   <h2> <%= "No one has booked you yet :c" if @profile_bookings.empty? %></h2>
+  <br>
+
+  <div class = "mybookingcontainer">
 
 
+    <% @profile_bookings.each do |book| %>
 
-<% if @profile.user_id  == current_user.id %>
-<% @profile_bookings.each do |book| %>
-<div class = "card my-3 p-5">
-<div class = "showing_booking_details d-flex justify-content-around align-items-center">
-<div class= "showing_dates align-item w-50">
-  <h3>You will work with: <%= @client.name %></h3>
+     <% @who = book.user_id
+        @client_record = Profile.where(user_id: @who)
+        @client = @client_record[0] %>
+
+      <div class = "card my-3 p-5">
+        <div class = "showing_booking_details d-flex justify-content-around align-items-center">
+          <div class= "working_with w-50">
+            <h3>You will work with: <%= @client.name %></h3>
           </div>
-          <div class = "showing_total d-flex align-items-center w-50">
-            <div class = "texttotal w-75">
-            <h5><%= book.start_date.strftime("Project starts at: %m/%d/%Y")%></h5>
-            <h5><%=book.end_date.strftime("Project ends at: %m/%d/%Y")%></h5>
+          <div class = "showing_details d-flex align-items-center">
+            <div class = "booked_for_dates">
+              <h5><%= book.start_date.strftime("Project starts at: %m/%d/%Y")%></h5>
+              <h5><%=book.end_date.strftime("Project ends at: %m/%d/%Y")%></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  </div>
 
-  <%end %>
-<% end %>
 
-</div>
-</div>
-</div>
-</div>
-</div>
+
+
+
 
 </div>
