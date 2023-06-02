@@ -1,15 +1,23 @@
-<h1>Become a Dev! 💻</h1>
 
-<div class="container m-1">
-<%= simple_form_for(@profile) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :bio %>
-  <%= f.input :day_rate %>
-  <%= f.hidden_field :rating, value: 0 %>
-  <%= f.input :category %>
-  <%= f.input :photo, as: :file, label: "Upload a picture of yourself" %>
-  <%= f.submit %>
-<% end %>
+
+<div class="container mx-5 my-0">
+
+<h1>Become a Dev! 💻</h1>
+<br>
+<br>
+  <%= simple_form_for(@profile) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :bio %>
+    <%= f.input :day_rate %>
+    <%= f.hidden_field :rating, value: 0 %>
+    <%= f.input :category%>
+    <%= f.input :photo, as: :file, label: "Upload a picture of yourself" %>
+    <br>
+    <br>
+    <%= f.submit "Devify me!", class: "btn btn-secondary" %>
+  <% end %>
 </div>
 <br>
-<%= link_to "Back", profiles_path %>
+<%= link_to profiles_path, { class: "btn btn-primary mx-5 mt-5" } do %>
+  Back To All Devs
+<% end %>
