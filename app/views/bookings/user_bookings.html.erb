@@ -63,7 +63,7 @@
   <h2> <%= "No one has booked you yet :c" if @profile_bookings.empty? %></h2>
   <br>
 
-  <div class = "mybookingcontainer">
+  <div class = "mybookingcontainer px-5">
 
 
     <% @profile_bookings.each do |book| %>
@@ -90,7 +90,9 @@
 
 
 
-
+  <%= link_to profiles_path, { class: "btn btn-primary mt-5" } do %>
+      Back To All Devs
+  <% end %>
 
 
 </div>
