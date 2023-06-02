@@ -16,7 +16,7 @@
               <p class="card-text">Day Rate: £<%= profile.day_rate %></p>
               <%= link_to "Read More", profile_path(profile), class: "btn btn-primary"%>
               <br>
-          </div>
+            </div>
           <% else %>
             <div class="card-img-top" style="background-image"></div>
             <img src="https://res.cloudinary.com/dgqqot40q/image/upload/v1685635592/premium-design-of-programmer-professional-worker-avatar-vector_y9bp2n.jpg" alt="A placeholder profile picture" height="150" width="250">
@@ -26,13 +26,14 @@
               <p class="card-text">Devify rating: <%= profile.rating %>/10</p>
               <p class="card-text">Day Rate: £<%= profile.day_rate %></p>
               <%= link_to "Read More", profile_path(profile), class: "btn btn-primary btn-rounded" %>
+            </div>
           <% end %>
 
 
-        </div>
       </div>
-      <% end %>
     </div>
+
+      <% end %>
   </div>
 </div>
 </div>
