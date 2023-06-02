@@ -7,7 +7,7 @@
   <div div class ="container mt-0 mx-0 w-75">
     <div><h1><%= @profile.name %></h1></div>
     <div class="pic-with-bio">
-      <%= cl_image_tag @profile.photo.key, height: 250, width: 250, crop: :fill if @profile.photo.key != nil%>
+      <%= cl_image_tag @profile.photo.key, height: 250, width: 250, crop: :fill, style: "border-radius: 15px; border: 2px solid #80c5bd;" if @profile.photo.key.present? %>
       <div class="px-3"><%= @profile.bio %></div>
     </div>
     <div class="flex-container">
@@ -22,7 +22,7 @@
         <% end %>
         </h5>
         </div>
-        <div>Expert on:
+        <div>Expertise:
         <h5><%= @profile.category.capitalize %> Developer 💻</h5>
         </div>
     </div>
