@@ -11,9 +11,9 @@
             <div class="card-img-top" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path profile.photo.key, height: 300, crop: :fill %>'); border-radius: 22px;"></div>
             <div class="card-body">
               <h5 class="card-title"><%=profile.name%></h5>
-              <p class="card-text">Specialty: <%= profile.category.capitalize %> Programming </p>
-              <p class="card-text">Devify rating: <%= profile.rating %>/10</p>
-              <p class="card-text">Day Rate: £<%= profile.day_rate %></p>
+              <p class="card-text"><b>Expertise:</b> <%= profile.category.capitalize %> Programming</p>
+              <p class="card-text"><b>Devify rating:</b> <%= profile.rating %>/10</p>
+              <p class="card-text"><b>Day Rate: </b>£<%= profile.day_rate %></p>
               <%= link_to "Read More", profile_path(profile), class: "btn btn-primary"%>
               <br>
             </div>
@@ -22,7 +22,7 @@
             <img src="https://res.cloudinary.com/dgqqot40q/image/upload/v1685635592/premium-design-of-programmer-professional-worker-avatar-vector_y9bp2n.jpg" alt="A placeholder profile picture" height="150" width="250">
             <div class="card-body">
               <h5 class="card-title"><%=profile.name%></h5>
-              <p class="card-text">Specialty: <%= profile.category.capitalize %> Programming </p>
+              <p class="card-text">Expertise: <%= profile.category.capitalize %> Programming </p>
               <p class="card-text">Devify rating: <%= profile.rating %>/10</p>
               <p class="card-text">Day Rate: £<%= profile.day_rate %></p>
               <%= link_to "Read More", profile_path(profile), class: "btn btn-primary btn-rounded" %>
