@@ -7,3 +7,11 @@
 @import "pic_with_bio";
 @import "footer";
 @import "landing_page_header";
+
+
+.btn.btn-primary:hover {
+  background-color: #ffffff !important;
+  border-radius: #80C5BD !important;
+  color: #80C5BD; /* Change the color value to the desired color */
+  text-decoration: none; /* Remove the underline */
+}
