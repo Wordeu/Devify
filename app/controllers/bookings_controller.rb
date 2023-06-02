@@ -11,6 +11,9 @@ class BookingsController < ApplicationController
 
   def user_bookings
     @user_bookings = current_user.bookings
+    @profile = Profile.where(user_id: current_user.id)
+    @profile_bookings = Booking.where(profile_id: @profile.first.id)
+    # raise
   end
 
   def create
